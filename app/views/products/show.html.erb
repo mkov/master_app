@@ -1,0 +1,34 @@
+<p>
+  <h1><%= @product.name %></h1>
+</p>
+
+<p>
+  <%= @product.description %>
+</p>
+<br />
+
+<p>
+  <b>Price from:</b>
+  <%= @product.price_from %>
+</p>
+
+<p>
+  <b>Price to:</b>
+  <%= @product.price_to %>
+</p>
+<br />
+
+<p>
+  <%= raw @product.content %>
+</p>
+<br />
+
+<% if can? :update, @product %>
+  <%= link_to t(:edit), edit_product_path(@product) %> |
+<% end %>
+
+<% if can? :destroy, @product %>
+  <%= link_to t(:delete), @product, confirm: 'Вы уверены?', method: :delete %> |
+<% end %>
+
+<%= link_to t(:back), products_path %>

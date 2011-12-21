@@ -1,0 +1,14 @@
+<h1><%= t :companies %></h1>
+
+<table>
+<% @companies.each do |company| %>
+  <tr>
+    <td><%= link_to company.name, company %><br /><%= raw company.contacts %></td>
+    <td><%= company.description %></td>
+  </tr>
+<% end %>
+</table>
+
+<% if can? :create, @company %>
+  <%= link_to t(:add_company), new_company_path %>
+<% end %>

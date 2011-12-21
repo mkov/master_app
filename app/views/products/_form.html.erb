@@ -1,0 +1,43 @@
+<%= javascript_include_tag "javascripts/ckeditor/ckeditor.js" %>
+
+<%= form_for(@product) do |f| %>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% @product.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :pagetitle %><br />
+    <%= f.text_field :pagetitle %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.cktext_area :content %>
+  </div>
+  <div class="field">
+    <%= f.label :price_from %><br />
+    <%= f.number_field :price_from %>
+  </div>
+  <div class="field">
+    <%= f.label :price_to %><br />
+    <%= f.number_field :price_to %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

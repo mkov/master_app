@@ -1,0 +1,36 @@
+<p>
+  <%= @company.name %>
+</p>
+
+<p>
+  <%= @company.description %>
+</p>
+
+<p>
+  <%= raw @company.content %>
+</p>
+
+<p>
+  <b>Контакты:</b>
+  <%= raw @company.contacts %>
+</p>
+
+<p>
+  <b>Сайт:</b>
+  <%= @company.site %>
+</p>
+
+<p>
+  <b>E-mail:</b>
+  <%= @company.email %>
+</p>
+
+<% if can? :update, @company %>
+  <%= link_to t(:edit), edit_company_path(@company) %> |
+<% end %>
+
+<% if can? :destroy, @company %>
+  <%= link_to t(:delete), @company, confirm: 'Вы уверены?', method: :delete %> |
+<% end %>
+
+<%= link_to t(:back), companies_path %>

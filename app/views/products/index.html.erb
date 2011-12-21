@@ -1,0 +1,16 @@
+<h1><%= t(:products) %></h1>
+
+<table>
+<% @products.each do |product| %>
+  <tr>
+    <td><%= link_to product.name, product %></td>
+    <td><%= product.description %></td>
+    <td><%= product.price_from %></td>
+    <td><%= product.price_to %></td>
+  </tr>
+<% end %>
+</table>
+
+<% if can? :create, @product %>
+  <%= link_to t(:add_product), new_product_path %>
+<% end %>
