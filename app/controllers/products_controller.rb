@@ -1,83 +1,47 @@
 class ProductsController < ApplicationController
-  # GET /products
-  # GET /products.json
-  def index
-    @products = Product.all
+  load_and_authorize_resource
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @products }
-    end
+  def index
+    @category = Category.find(params[:category_id])
+    @products = @category.products.all
   end
 
-  # GET /products/1
-  # GET /products/1.json
   def show
     @product = Product.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @product }
-    end
   end
 
-  # GET /products/new
-  # GET /products/new.json
   def new
+    @category = Category.find(params[:category_id])
     @product = Product.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @product }
-    end
   end
 
-  # GET /products/1/edit
   def edit
-    @product = Product.find(params[:id])
+    @category = Category.find(params[:category_id])
+    @product = @category.products.find(params[:id])
   end
 
-  # POST /products
-  # POST /products.json
   def create
-    @product = Product.new(params[:product])
-
-    respond_to do |format|
-      if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
-        format.json { render json: @product, status: :created, location: @product }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
-      end
-    end
+    @category = Category.find(params[:category_id])
+    @product = @category.products.create(params[:product])
+    redirect_to category_path(@category)
   end
 
-  # PUT /products/1
-  # PUT /products/1.json
   def update
-    @product = Product.find(params[:id])
-
+    @category = Category.find(params[:category_id])
+    @product = @category.products.find(params[:id])
     respond_to do |format|
       if @product.update_attributes(params[:product])
-        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
-        format.json { head :ok }
+        format.html { redirect_to category_product_path(@category, @product), notice: t(:product_updated) }
       else
         format.html { render action: "edit" }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /products/1
-  # DELETE /products/1.json
   def destroy
-    @product = Product.find(params[:id])
+    @category = Category.find(params[:category_id])
+    @product = @category.products.find(params[:id])
     @product.destroy
-
-    respond_to do |format|
-      format.html { redirect_to products_url }
-      format.json { head :ok }
-    end
+    redirect_to category_path(@category)
   end
 end

@@ -1,5 +1,7 @@
 Master::Application.routes.draw do
-  resources :products
+  resources :categories do
+    resources :products
+  end
 
   devise_for :users
 

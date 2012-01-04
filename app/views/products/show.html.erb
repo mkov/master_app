@@ -3,7 +3,7 @@
 </p>
 
 <p>
-  <%= @product.description %>
+  <%= raw @product.description %>
 </p>
 <br />
 
@@ -24,11 +24,13 @@
 <br />
 
 <% if can? :update, @product %>
-  <%= link_to t(:edit), edit_product_path(@product) %> |
+  <%= link_to t(:edit), edit_category_product_path(@product.category) %> |
 <% end %>
 
 <% if can? :destroy, @product %>
-  <%= link_to t(:delete), @product, confirm: 'Вы уверены?', method: :delete %> |
+  <%= link_to t(:destroy_product), [@product.category, @product],
+             :confirm => 'Are you sure?',
+             :method => :delete %> |
 <% end %>
 
-<%= link_to t(:back), products_path %>
+<%= link_to t(:back), @product.category %>

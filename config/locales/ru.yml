@@ -3,11 +3,15 @@ ru:
   company_updated: "Информация о компании обновлена"
   company_deleted: "Компания успешно удалена"
   add_company: "Добавить компанию"
-  add_product: "Добавить товар"
+  add_product: "Добавить товар в категорию"
+  add_category: "Добавить категорию"
+  product_updated: "Информация о товаре обновлена"
+  destroy_product: "Удалить товар"
 
   base_title: "Товары и услуги для строительства и ремонта"
   companies: "Компании"
   products: "Товары"
+  categories: "Категории"
   home: "Главная"
   advt: "Реклама"
 

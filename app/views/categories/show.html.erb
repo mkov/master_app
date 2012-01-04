@@ -1,0 +1,38 @@
+<p>
+  <h1><%= @category.name %></h1>
+</p>
+
+<p>
+  <%= raw @category.description %>
+</p>
+<br />
+<hr />
+
+<p><%= t(:products) %></p>
+<%= render @category.products %>
+
+<% if can? :create, @product %>
+  <%= link_to t(:add_product) + " " + @category.name, new_category_product_path(@category) %>
+<% end %>
+<br />
+<hr />
+
+<p>
+  <%= raw @category.content %>
+</p>
+
+<br />
+<p>
+  Parent: <%= @category.parent_id %>
+</p>
+<br />
+
+<% if can? :update, @category %>
+  <%= link_to t(:edit), edit_category_path(@category) %> |
+<% end %>
+
+<% if can? :destroy, @category %>
+  <%= link_to t(:delete), @category, confirm: 'Вы уверены?', method: :delete %> |
+<% end %>
+
+<%= link_to t(:back), categories_path %>

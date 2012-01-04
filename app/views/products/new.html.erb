@@ -1,5 +1,5 @@
-<h1><%= t(:add_product) %></h1>
+<h1><%= t(:add_product) %> <%= @category.name %></h1>
 
 <%= render 'form' %>
 
-<%= link_to t(:back), products_path %>
+<%= link_to t(:back), category_path(@category) %>
