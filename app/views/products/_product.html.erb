@@ -1,5 +1,10 @@
   <p><%= link_to product.name, [product.category, product] %></p>
+  <p><span class="price"><%= product.price_from %> - <%= product.price_to %> $</span></p>
+  <p>
+    <% if (!product.photos.blank?) %>
+      <%= image_tag product.photos.first.data(:medium) %>
+    <% end %>
+  </p>
+
   <p><%= raw product.description %></p>
-  <p>Price from: <%= product.price_from %></p>
-  <p>Price to: <%= product.price_to %></p>
   <br />

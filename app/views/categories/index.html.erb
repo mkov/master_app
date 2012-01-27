@@ -1,12 +1,34 @@
 <h1><%= t(:categories) %></h1>
 
 <table>
-<% @categories.each do |category| %>
+<% @level.each do |category| %>
   <tr>
-    <td><%= link_to category.name, category %></td>
+    <td>
+      <%= link_to category.name, category %>
+      <% category.children.each do |child| %>
+        <br /> &nbsp; <%= link_to child.name, child %>
+      <% end %>
+    </td>
   </tr>
 <% end %>
 </table>
+
+<%
+	def show_tree(level)
+		html= ""
+		level.each do |elem|
+			html+= "<div style='padding-left: 25px;'>"
+				html+= elem.name
+				unless elem.children.empty?
+					html+= show_tree(elem.children)
+				end
+			html+= "</div>"
+		end
+		raw html
+	end
+%>
+
+<!-- <%= show_tree(@level) %>  -->
 
 <% if can? :create, @category %>
   <%= link_to t(:add_category), new_category_path %>

@@ -27,8 +27,11 @@ gem 'jquery-rails', '1.0.19'
 
 gem 'ckeditor'
 gem 'paperclip'
+gem 'nested_form'
 
 gem 'russian', '~> 0.6.0'
+
+gem 'acts_as_tree', '0.1.1'
 
 gem 'rspec-rails', :groups => [:development, :test]
 

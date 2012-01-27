@@ -8,16 +8,19 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @companies = Company.all
   end
 
   def new
     @category = Category.find(params[:category_id])
     @product = Product.new
+    3.times {@product.photos.build}
   end
 
   def edit
     @category = Category.find(params[:category_id])
     @product = @category.products.find(params[:id])
+    3.times {@product.photos.build}
   end
 
   def create

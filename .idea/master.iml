@@ -12,6 +12,12 @@
   <component name="GemRequirementsHolder" version="3">
     <requirement>
       <requirement>
+        <dependency name="acts_as_tree" version="0.1.1" bound="EQUAL" git="false" path="false" doRequire="true" />
+      </requirement>
+      <source from="Gemfile" />
+    </requirement>
+    <requirement>
+      <requirement>
         <dependency name="cancan" version="0" bound="GREATER_OR_EQUAL" git="false" path="false" doRequire="true" />
       </requirement>
       <source from="Gemfile" />
@@ -79,6 +85,12 @@
     <requirement>
       <requirement>
         <dependency name="mysql2" version="0.3.7" bound="EQUAL" git="false" path="false" doRequire="true" />
+      </requirement>
+      <source from="Gemfile" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="nested_form" version="0" bound="GREATER_OR_EQUAL" git="false" path="false" doRequire="true" />
       </requirement>
       <source from="Gemfile" />
     </requirement>
@@ -200,6 +212,8 @@
     <orderEntry type="library" scope="PROVIDED" name="[gem] capybara (v1.1.1, /home/maxim/.rvm/gems/ruby-1.9.2-p290@global/gems/capybara-1.1.1)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] xpath (v0.1.4, /home/maxim/.rvm/gems/ruby-1.9.2-p290@global/gems/xpath-0.1.4)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] i18n (v0.6.0, /home/maxim/.rvm/gems/ruby-1.9.2-p290@global/gems/i18n-0.6.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] russian (v0.6.0, /home/maxim/.rvm/gems/ruby-1.9.2-p290@global/gems/russian-0.6.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] acts_as_tree (v0.1.1, /home/maxim/.rvm/gems/ruby-1.9.2-p290@global/gems/acts_as_tree-0.1.1)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] tzinfo (v0.3.31, /home/maxim/.rvm/gems/ruby-1.9.2-p290@global/gems/tzinfo-0.3.31)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] gherkin (v2.4.21, /home/maxim/.rvm/gems/ruby-1.9.2-p290@global/gems/gherkin-2.4.21)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] activemodel (v3.1.0, /home/maxim/.rvm/gems/ruby-1.9.2-p290@global/gems/activemodel-3.1.0)" level="application" />
@@ -229,7 +243,33 @@
     <orderEntry type="library" scope="PROVIDED" name="[gem] rdoc (v3.11, /home/maxim/.rvm/gems/ruby-1.9.2-p290@global/gems/rdoc-3.11)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] rack-mount (v0.8.3, /home/maxim/.rvm/gems/ruby-1.9.2-p290@global/gems/rack-mount-0.8.3)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] addressable (v2.2.6, /home/maxim/.rvm/gems/ruby-1.9.2-p290@global/gems/addressable-2.2.6)" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="[gem] russian (v0.6.0, /home/maxim/.rvm/gems/ruby-1.9.2-p290@global/gems/russian-0.6.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] ckeditor (v3.6.3, /home/maxim/.rvm/gems/ruby-1.9.2-p290@global/gems/ckeditor-3.6.3)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] nested_form (v0.1.1, /home/maxim/.rvm/gems/ruby-1.9.2-p290@global/gems/nested_form-0.1.1)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] cancan (v1.6.7, /home/maxim/.rvm/gems/ruby-1.9.2-p290@global/gems/cancan-1.6.7)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] database_cleaner (v0.7.0, /home/maxim/.rvm/gems/ruby-1.9.2-p290@global/gems/database_cleaner-0.7.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rspec-rails (v2.7.0, /home/maxim/.rvm/gems/ruby-1.9.2-p290@global/gems/rspec-rails-2.7.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] capybara (v1.1.2, /home/maxim/.rvm/gems/ruby-1.9.2-p290@global/gems/capybara-1.1.2)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] cucumber-rails (v1.2.1, /home/maxim/.rvm/gems/ruby-1.9.2-p290@global/gems/cucumber-rails-1.2.1)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] devise (v1.5.3, /home/maxim/.rvm/gems/ruby-1.9.2-p290@global/gems/devise-1.5.3)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] guard-rspec (v0.6.0, /home/maxim/.rvm/gems/ruby-1.9.2-p290@global/gems/guard-rspec-0.6.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] guard-cucumber (v0.7.4, /home/maxim/.rvm/gems/ruby-1.9.2-p290@global/gems/guard-cucumber-0.7.4)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] paperclip (v2.4.5, /home/maxim/.rvm/gems/ruby-1.9.2-p290@global/gems/paperclip-2.4.5)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] oa-oauth (v0.3.2, /home/maxim/.rvm/gems/ruby-1.9.2-p290@global/gems/oa-oauth-0.3.2)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] factory_girl_rails (v1.4.0, /home/maxim/.rvm/gems/ruby-1.9.2-p290@global/gems/factory_girl_rails-1.4.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] oa-core (v0.3.2, /home/maxim/.rvm/gems/ruby-1.9.2-p290@global/gems/oa-core-0.3.2)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] guard (v0.10.0, /home/maxim/.rvm/gems/ruby-1.9.2-p290@global/gems/guard-0.10.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] capybara (v1.1.2, /home/maxim/.rvm/gems/ruby-1.9.2-p290@global/gems/capybara-1.1.2)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rspec-expectations (v2.7.0, /home/maxim/.rvm/gems/ruby-1.9.2-p290@global/gems/rspec-expectations-2.7.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rspec-core (v2.7.1, /home/maxim/.rvm/gems/ruby-1.9.2-p290@global/gems/rspec-core-2.7.1)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] gherkin (v2.7.1, /home/maxim/.rvm/gems/ruby-1.9.2-p290@global/gems/gherkin-2.7.1)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rspec-mocks (v2.7.0, /home/maxim/.rvm/gems/ruby-1.9.2-p290@global/gems/rspec-mocks-2.7.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] factory_girl (v2.3.2, /home/maxim/.rvm/gems/ruby-1.9.2-p290@global/gems/factory_girl-2.3.2)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] oauth2 (v0.5.2, /home/maxim/.rvm/gems/ruby-1.9.2-p290@global/gems/oauth2-0.5.2)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] warden (v1.1.0, /home/maxim/.rvm/gems/ruby-1.9.2-p290@global/gems/warden-1.1.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] multi_xml (v0.4.1, /home/maxim/.rvm/gems/ruby-1.9.2-p290@global/gems/multi_xml-0.4.1)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] faraday (v0.7.5, /home/maxim/.rvm/gems/ruby-1.9.2-p290@global/gems/faraday-0.7.5)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rspec (v2.7.0, /home/maxim/.rvm/gems/ruby-1.9.2-p290@global/gems/rspec-2.7.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] cucumber (v1.1.4, /home/maxim/.rvm/gems/ruby-1.9.2-p290@global/gems/cucumber-1.1.4)" level="application" />
   </component>
 </module>
 

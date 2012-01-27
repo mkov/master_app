@@ -3,29 +3,56 @@
 </p>
 
 <p>
-  <%= raw @category.description %>
+  <div class="border_box">
+    <%= raw @category.description %>
+  </div>
 </p>
 <br />
-<hr />
 
-<p><%= t(:products) %></p>
-<%= render @category.products %>
+<table>
+<% @category.children.each do |elem| %>
+  <tr>
+    <td><%= link_to elem.name, elem %></td>
+  </tr>
+<% end %>
+</table>
+
+
+
+<table>
+  <tr>
+    <td>
+      <% if !@category.products.blank? %>
+        <%= render @category.products %>
+      <% end %>
 
 <% if can? :create, @product %>
   <%= link_to t(:add_product) + " " + @category.name, new_category_product_path(@category) %>
 <% end %>
-<br />
-<hr />
+    </td>
+    <td width="200px">
+      <% if !@category.products.blank? %>
+      <div class="round fone_round">
+        где купить <%= @category.name.downcase! %>:<br /><br />
+        <% @companies.each do |company| %>
+          <%= link_to company.name, company %><br />
+          <%= raw company.contacts %><br />
+        <% end %>
+      </div>
+      <% end %>
+    </td>
+  </tr>
+</table>
 
-<p>
-  <%= raw @category.content %>
-</p>
+<% if !@category.content.blank? %>
+  <p>
+    <div class="border_box">
+      <%= raw @category.content %>
+    </div>
+  </p>
+  <br />
+<% end %>
 
-<br />
-<p>
-  Parent: <%= @category.parent_id %>
-</p>
-<br />
 
 <% if can? :update, @category %>
   <%= link_to t(:edit), edit_category_path(@category) %> |

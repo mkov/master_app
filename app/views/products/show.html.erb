@@ -1,3 +1,6 @@
+<table>
+  <tr>
+    <td style="padding-right: 20px;">
 <p>
   <h1><%= @product.name %></h1>
 </p>
@@ -5,22 +8,24 @@
 <p>
   <%= raw @product.description %>
 </p>
+
 <br />
 
 <p>
-  <b>Price from:</b>
-  <%= @product.price_from %>
+  <h2><span class="price"><%= @product.price_from %> - <%= @product.price_to %> $</span></h2>
 </p>
 
 <p>
-  <b>Price to:</b>
-  <%= @product.price_to %>
+  <% @product.photos.each do |photo| %>
+    <%= image_tag photo.data(:medium) %>
+  <% end %>
 </p>
 <br />
 
 <p>
   <%= raw @product.content %>
 </p>
+
 <br />
 
 <% if can? :update, @product %>
@@ -34,3 +39,16 @@
 <% end %>
 
 <%= link_to t(:back), @product.category %>
+    </td>
+    <td>
+    <td width="200px">
+      <div class="round fone_round">
+        где купить:<br /><br />
+        <% @companies.each do |company| %>
+          <%= link_to company.name, company %><br />
+          <%= raw company.contacts %><br />
+        <% end %>
+      </div>
+    </td>
+  </tr>
+</table>

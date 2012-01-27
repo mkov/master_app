@@ -3,10 +3,12 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = Category.all
+    @level = Category.find_all_by_parent_id(nil)
   end
 
   def show
     @category = Category.find(params[:id])
+    @companies = Company.all
   end
 
   def new

@@ -1,6 +1,6 @@
 <%= javascript_include_tag "javascripts/ckeditor/ckeditor.js" %>
 
-<%= form_for([@category, @product]) do |f| %>
+<%= form_for([@category, @product], :html => {:multipart => true}) do |f| %>
 
   <div class="field">
     <%= f.label :name %><br />
@@ -26,6 +26,16 @@
     <%= f.label :price_to %><br />
     <%= f.number_field :price_to %>
   </div>
+
+  <%= f.fields_for :photos do |builder| %>
+    <% if builder.object.new_record? %>
+      <div class="field">
+        <%= builder.label :data %><br />
+        <%= builder.file_field :data %>
+      </div>
+    <% end %>
+  <% end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>
